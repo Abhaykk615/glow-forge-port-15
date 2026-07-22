@@ -34,6 +34,7 @@
   --color-ring: var(--ring);
   --color-brand-blue: var(--brand-blue);
   --color-brand-purple: var(--brand-purple);
+  --color-brand-coral: var(--brand-coral);
 }
 
 :root {
@@ -57,8 +58,9 @@
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 12%);
   --ring: oklch(0.7 0.2 275);
-  --brand-blue: oklch(0.68 0.19 250);
-  --brand-purple: oklch(0.66 0.24 300);
+  --brand-blue: oklch(0.72 0.17 35);
+  --brand-purple: oklch(0.68 0.22 25);
+  --brand-coral: oklch(0.72 0.19 30);
 }
 
 html {

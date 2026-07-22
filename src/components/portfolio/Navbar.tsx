@@ -28,36 +28,27 @@ export function Navbar() {
     <>
       <motion.div
         style={{ scaleX: progress }}
-        className="fixed left-0 right-0 top-0 z-[60] h-0.5 origin-left bg-gradient-to-r from-brand-blue via-brand-purple to-brand-blue"
+        className="fixed left-0 right-0 top-0 z-[60] h-0.5 origin-left bg-brand-coral"
       />
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-          scrolled ? "py-3" : "py-5"
+          scrolled ? "py-3 backdrop-blur-xl bg-[#0B0B0B]/70 border-b border-white/5" : "py-5"
         }`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6">
           <Link
             to="/"
-            className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all ${
-              scrolled ? "glass-strong" : ""
-            }`}
+            className="font-display text-lg font-semibold tracking-tight"
           >
-            <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-brand-blue to-brand-purple text-xs font-black text-white">
-              AK
-            </span>
-            <span className="font-display tracking-tight">Abhay Kumar</span>
+            Abhay<span className="text-brand-coral">.</span>Kumar
           </Link>
 
-          <nav
-            className={`hidden items-center gap-1 rounded-full px-2 py-1.5 md:flex ${
-              scrolled ? "glass-strong" : "glass"
-            }`}
-          >
+          <nav className="hidden items-center gap-8 md:flex">
             {NAV.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className="rounded-full px-4 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
+                className="relative text-sm text-foreground/80 transition-colors hover:text-brand-coral"
               >
                 {item.label}
               </a>
@@ -66,7 +57,7 @@ export function Navbar() {
 
           <a
             href="#contact"
-            className="hidden rounded-full bg-gradient-to-r from-brand-blue to-brand-purple px-5 py-2 text-sm font-medium text-white transition-transform hover:scale-105 md:inline-flex"
+            className="hidden rounded-md border border-brand-coral/70 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-brand-coral/10 md:inline-flex"
           >
             Let's talk
           </a>

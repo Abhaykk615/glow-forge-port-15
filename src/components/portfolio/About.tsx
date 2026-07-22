@@ -1,83 +1,94 @@
 import { motion } from "motion/react";
-import { GraduationCap, Code2, Layers, Server } from "lucide-react";
-import { SectionHeading } from "./SectionHeading";
+import { Code2, Layout, Server, Database } from "lucide-react";
 
-const STATS = [
-  { value: "450+", label: "Problems Solved" },
-  { value: "3★", label: "CodeChef" },
-  { value: "1621", label: "LeetCode Rating" },
-  { value: "2+", label: "Internships" },
+const SERVICES = [
+  { icon: Layout, title: "Frontend Development", desc: "React, Next.js, TypeScript, Tailwind" },
+  { icon: Server, title: "Backend & APIs", desc: "Node.js, Express, REST services" },
+  { icon: Database, title: "Databases", desc: "MongoDB, PostgreSQL, Firestore" },
+  { icon: Code2, title: "DSA & Problem Solving", desc: "450+ problems · LeetCode 1621" },
 ];
 
-const HIGHLIGHTS = [
-  {
-    icon: GraduationCap,
-    title: "B.Tech IT · BIET Jhansi",
-    desc: "AKTU · CGPA 7.92 · 2022–2026",
-  },
-  {
-    icon: Code2,
-    title: "CS Fundamentals",
-    desc: "Strong grasp of DSA, OOP, DBMS, OS & Networks",
-  },
-  {
-    icon: Layers,
-    title: "Modern Frontend",
-    desc: "React, Next.js, TypeScript, Tailwind — pixel-perfect UIs",
-  },
-  {
-    icon: Server,
-    title: "Backend & APIs",
-    desc: "Node.js, Express, REST — scalable services & data models",
-  },
+const STATS = [
+  { value: "20", suffix: "+", label: "Projects Shipped" },
+  { value: "450", suffix: "+", label: "Problems Solved" },
+  { value: "2", suffix: "+", label: "Internships" },
 ];
 
 export function About() {
   return (
     <section id="about" className="relative py-24 sm:py-32">
-      <SectionHeading
-        eyebrow="About"
-        title={<>Engineer at heart, <span className="gradient-text">builder</span> by craft</>}
-        description="I care about the boring things that make software feel great — performance, accessibility, correctness — and the details that ship."
-      />
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 px-4 sm:px-6 lg:grid-cols-[1fr_1.2fr]">
+        {/* Services list */}
+        <div className="relative">
+          <div className="absolute left-0 top-2 h-full w-px bg-brand-coral/40" />
+          <div className="space-y-8 pl-8">
+            {SERVICES.map((s, i) => (
+              <motion.div
+                key={s.title}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="relative flex items-center gap-4"
+              >
+                <span className="absolute -left-[33px] top-4 h-2 w-2 rounded-full bg-brand-coral" />
+                <div className="grid h-14 w-14 shrink-0 place-items-center rounded-xl border border-brand-coral/30 bg-white/[0.02] text-brand-coral">
+                  <s.icon size={22} />
+                </div>
+                <div className="min-w-0">
+                  <h3 className="font-display text-lg font-semibold">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground">{s.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
-      <div className="mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-4 px-4 sm:grid-cols-4 sm:px-6">
-        {STATS.map((s, i) => (
-          <motion.div
-            key={s.label}
+        {/* About text + stats */}
+        <div>
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="glass rounded-2xl p-5 text-center transition-all hover:glass-strong hover:-translate-y-1"
+            transition={{ duration: 0.5 }}
+            className="font-display text-5xl font-bold tracking-tight sm:text-6xl"
           >
-            <div className="font-display text-3xl font-bold gradient-text sm:text-4xl">
-              {s.value}
-            </div>
-            <div className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">
-              {s.label}
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      <div className="mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-4 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
-        {HIGHLIGHTS.map((h, i) => (
-          <motion.div
-            key={h.title}
+            About me
+          </motion.h2>
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="group glass rounded-2xl p-6 transition-all hover:-translate-y-1 hover:glass-strong"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mt-6 max-w-xl leading-relaxed text-muted-foreground"
           >
-            <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-blue/20 to-brand-purple/20 text-brand-blue transition-transform group-hover:scale-110">
-              <h.icon size={20} />
-            </div>
-            <h3 className="mt-4 font-display text-base font-semibold">{h.title}</h3>
-            <p className="mt-1 text-sm text-muted-foreground">{h.desc}</p>
-          </motion.div>
-        ))}
+            I'm a B.Tech IT student at BIET Jhansi (AKTU · CGPA 7.92) who fell in
+            love with software through solving problems. That curiosity now
+            drives everything I build — from pixel-perfect interfaces to
+            reliable backends. I care about performance, accessibility, and the
+            small details that make products feel great.
+          </motion.p>
+
+          <div className="mt-12 grid grid-cols-3 gap-4">
+            {STATS.map((s, i) => (
+              <motion.div
+                key={s.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <div className="flex items-baseline gap-1">
+                  <span className="font-display text-4xl font-bold sm:text-5xl">{s.value}</span>
+                  <span className="font-display text-3xl font-bold text-brand-coral">{s.suffix}</span>
+                </div>
+                <div className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">
+                  {s.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
