@@ -34,6 +34,7 @@
   --color-ring: var(--ring);
   --color-brand-blue: var(--brand-blue);
   --color-brand-purple: var(--brand-purple);
+  --color-brand-coral: var(--brand-coral);
 }
 
 :root {
