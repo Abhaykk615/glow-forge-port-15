@@ -1,156 +1,127 @@
 import { motion } from "motion/react";
-import { ArrowRight, Download, Mail, Sparkles } from "lucide-react";
-import heroImg from "@/assets/hero-workspace.jpg";
+import { ArrowRight, FileText } from "lucide-react";
+import portrait from "@/assets/portrait.jpg";
+
+const TECHS = ["HTML5", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Git", "GitHub"];
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
+    <section id="home" className="relative isolate overflow-hidden pt-28 sm:pt-32">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-0 h-[600px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--brand-purple)_35%,transparent),transparent)] blur-3xl" />
-        <div className="absolute right-0 top-1/3 h-[400px] w-[500px] rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--brand-blue)_30%,transparent),transparent)] blur-3xl" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,color-mix(in_oklab,white_3%,transparent)_1px,transparent_1px),linear-gradient(to_bottom,color-mix(in_oklab,white_3%,transparent)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
       </div>
 
-      {/* Floating particles */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        {Array.from({ length: 20 }).map((_, i) => (
-          <motion.span
-            key={i}
-            className="absolute h-1 w-1 rounded-full bg-white/40"
-            style={{
-              left: `${(i * 53) % 100}%`,
-              top: `${(i * 37) % 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.2, 0.8, 0.2],
-            }}
-            transition={{
-              duration: 4 + (i % 5),
-              repeat: Infinity,
-              delay: i * 0.2,
-            }}
-          />
-        ))}
-      </div>
-
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.15fr_1fr]">
-        <div>
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 pb-10 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:pb-16">
+        {/* Left copy */}
+        <div className="relative">
+          <div className="absolute -left-3 top-3 hidden h-24 w-px bg-brand-coral/70 sm:block" />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-muted-foreground"
+            transition={{ duration: 0.5 }}
+            className="font-display text-5xl font-semibold tracking-tight sm:text-6xl"
           >
-            <Sparkles size={12} className="text-brand-purple" />
-            Available for opportunities · 2026
+            Hello<span className="text-brand-coral">.</span>
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-3 font-display text-4xl font-medium leading-tight tracking-tight text-foreground/90 sm:text-5xl"
           >
-            Abhay
-            <br />
-            <span className="gradient-text">Kumar</span>
+            I'm <span className="underline decoration-brand-coral decoration-2 underline-offset-8">Abhay Kumar</span>
           </motion.h1>
 
-          <motion.p
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-5 text-lg font-medium text-foreground/80"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-5 font-display text-5xl font-bold tracking-tight sm:text-6xl"
           >
-            Software Engineer{" "}
-            <span className="text-muted-foreground">·</span> Frontend Developer{" "}
-            <span className="text-muted-foreground">·</span> Full Stack Developer
-          </motion.p>
+            Software Developer
+          </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground"
           >
-            I build scalable, responsive, and production-ready web applications
-            using React, Next.js, TypeScript, and Node.js. Passionate about
-            solving real-world problems through clean code and intuitive user
-            experiences.
+            I build scalable, responsive, production-ready web apps with React,
+            Next.js, TypeScript and Node.js — clean code, thoughtful UX.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-8 flex flex-wrap items-center gap-3"
           >
             <a
-              href="#projects"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple px-6 py-3 text-sm font-semibold text-white transition-all hover:scale-[1.03] glow-purple"
+              href="#contact"
+              className="group inline-flex items-center gap-2 rounded-md bg-brand-coral px-6 py-3 text-sm font-semibold text-white transition-all hover:brightness-110"
+              style={{ boxShadow: "0 10px 30px -10px color-mix(in oklab, var(--brand-coral) 60%, transparent)" }}
             >
-              View Projects
+              Got a project?
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="/resume.pdf"
-              className="inline-flex items-center gap-2 rounded-full glass-strong px-6 py-3 text-sm font-semibold text-foreground transition-all hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-md border border-brand-coral/70 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-brand-coral/10"
             >
-              <Download size={16} />
-              Resume
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <Mail size={16} />
-              Contact me
+              <FileText size={16} />
+              My resume
             </a>
           </motion.div>
         </div>
 
-        {/* Right visual */}
+        {/* Right portrait with ring */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative"
+          className="relative mx-auto aspect-square w-full max-w-md"
         >
-          <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-brand-blue/30 to-brand-purple/30 blur-3xl" />
-          <div className="relative gradient-border rounded-3xl glass-strong p-2">
+          {/* Rotating ring */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-0 rounded-full border border-dashed border-brand-coral/40"
+          />
+          <div className="absolute inset-6 rounded-full border-2 border-brand-coral/60" />
+          <div className="absolute inset-10 rounded-full border border-brand-coral/20" />
+
+          {/* Chevrons */}
+          <div className="absolute left-2 top-1/2 -translate-y-1/2 font-display text-4xl text-brand-coral/60">&lt;</div>
+          <div className="absolute right-2 top-1/2 -translate-y-1/2 font-display text-4xl text-brand-coral/60">&gt;</div>
+
+          {/* Portrait */}
+          <div className="absolute inset-12 overflow-hidden rounded-full">
             <img
-              src={heroImg}
-              alt="Isometric holographic developer workspace"
-              width={1200}
-              height={1200}
-              className="rounded-2xl"
+              src={portrait}
+              alt="Abhay Kumar portrait"
+              width={900}
+              height={1100}
+              className="h-full w-full object-cover"
             />
           </div>
-
-          <motion.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 5, repeat: Infinity }}
-            className="absolute -left-4 top-8 rounded-2xl glass-strong px-4 py-3 text-xs sm:-left-8"
-          >
-            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
-              LeetCode
-            </div>
-            <div className="font-display text-xl font-bold gradient-text">1621</div>
-          </motion.div>
-
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, delay: 1 }}
-            className="absolute -right-2 bottom-8 rounded-2xl glass-strong px-4 py-3 text-xs sm:-right-6"
-          >
-            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
-              Problems
-            </div>
-            <div className="font-display text-xl font-bold gradient-text">450+</div>
-          </motion.div>
         </motion.div>
+      </div>
+
+      {/* Tech strip */}
+      <div className="mt-4 border-y border-white/10 bg-white/[0.02]">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-5 sm:px-6">
+          {TECHS.map((t) => (
+            <span
+              key={t}
+              className="font-display text-sm uppercase tracking-widest text-muted-foreground transition-colors hover:text-brand-coral"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );
