@@ -63,7 +63,7 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
             <a
               href={project.liveUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-brand-blue to-brand-purple px-4 py-2 text-xs font-medium text-white transition-transform hover:scale-105"
             >
               <ArrowUpRight size={14} /> Live Demo
@@ -73,7 +73,7 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
             <a
               href={project.githubUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full glass px-4 py-2 text-xs font-medium text-foreground transition-all hover:glass-strong"
             >
               <Github size={14} /> GitHub
@@ -83,7 +83,7 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
             <a
               href={project.caseStudyUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full glass px-4 py-2 text-xs font-medium text-foreground transition-all hover:glass-strong"
             >
               <BookOpen size={14} /> Case Study

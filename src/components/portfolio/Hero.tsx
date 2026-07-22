@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight, FileText } from "lucide-react";
-import portrait from "@/assets/portrait.jpg";
+// Image is in the public folder
 
 const TECHS = ["HTML5", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Git", "GitHub"];
 
@@ -67,44 +67,45 @@ export function Hero() {
               Got a project?
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>
-            <a
-              href="/resume.pdf"
-              className="inline-flex items-center gap-2 rounded-md border border-brand-coral/70 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-brand-coral/10"
-            >
-              <FileText size={16} />
-              My resume
-            </a>
+
           </motion.div>
         </div>
 
         {/* Right portrait with ring */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative mx-auto aspect-square w-full max-w-md"
+          animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
+          transition={{
+            opacity: { duration: 0.8, delay: 0.2 },
+            scale: { duration: 0.8, delay: 0.2 },
+            y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+          }}
+          className="relative mx-auto aspect-square w-full max-w-sm sm:max-w-md group"
         >
-          {/* Rotating ring */}
+          {/* Soft purple glow behind */}
+          <div className="absolute inset-0 rounded-full bg-brand-purple/20 blur-3xl transition-all duration-500 group-hover:bg-brand-purple/40 group-hover:blur-2xl" />
+
+          {/* Premium circular glass frame & rotating ring */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
             className="absolute inset-0 rounded-full border border-dashed border-brand-coral/40"
           />
-          <div className="absolute inset-6 rounded-full border-2 border-brand-coral/60" />
-          <div className="absolute inset-10 rounded-full border border-brand-coral/20" />
+          <div className="absolute inset-4 rounded-full border-2 border-brand-coral/60 glass-strong shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]" />
+          <div className="absolute inset-8 rounded-full border border-brand-coral/20" />
 
           {/* Chevrons */}
-          <div className="absolute left-2 top-1/2 -translate-y-1/2 font-display text-4xl text-brand-coral/60">&lt;</div>
-          <div className="absolute right-2 top-1/2 -translate-y-1/2 font-display text-4xl text-brand-coral/60">&gt;</div>
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 font-display text-4xl text-brand-coral/60">&lt;</div>
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 font-display text-4xl text-brand-coral/60">&gt;</div>
 
           {/* Portrait */}
-          <div className="absolute inset-12 overflow-hidden rounded-full">
+          <div className="absolute inset-10 overflow-hidden rounded-full transition-transform duration-500 group-hover:scale-105">
             <img
-              src={portrait}
+              src="/pasportsize photo.jpeg"
               alt="Abhay Kumar portrait"
               width={900}
               height={1100}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
           </div>
         </motion.div>

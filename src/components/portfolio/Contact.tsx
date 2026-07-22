@@ -1,13 +1,12 @@
 import { motion } from "motion/react";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
 const CONTACTS = [
-  { icon: Mail, label: "Email", value: "abhay@example.com", href: "mailto:abhay@example.com" },
-  { icon: Phone, label: "Phone", value: "+91 00000 00000", href: "tel:+910000000000" },
-  { icon: Linkedin, label: "LinkedIn", value: "in/abhaykumar", href: "#" },
-  { icon: Github, label: "GitHub", value: "@abhaykumar", href: "#" },
+  { icon: Mail, label: "Email", value: "abhaykk615@gmail.com", href: "mailto:abhaykk615@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+91 8355083040", href: "tel:+918355083040" },
+  { icon: Github, label: "GitHub", value: "@Abhaykk615", href: "https://github.com/Abhaykk615" },
 ];
 
 export function Contact() {

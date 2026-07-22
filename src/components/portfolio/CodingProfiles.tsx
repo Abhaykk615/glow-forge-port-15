@@ -1,13 +1,11 @@
 import { motion } from "motion/react";
-import { Github, Linkedin, Code2, Trophy, Terminal } from "lucide-react";
+import { Github, Trophy, Terminal } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
 const PROFILES = [
-  { name: "LeetCode", icon: Code2, handle: "@abhaykumar", url: "#" },
-  { name: "CodeChef", icon: Trophy, handle: "3★ Coder", url: "#" },
-  { name: "GeeksforGeeks", icon: Terminal, handle: "@abhaykumar", url: "#" },
-  { name: "GitHub", icon: Github, handle: "@abhaykumar", url: "#" },
-  { name: "LinkedIn", icon: Linkedin, handle: "in/abhaykumar", url: "#" },
+  { name: "CodeChef", icon: Trophy, handle: "breezycape13", url: "https://www.codechef.com/users/breezycape13" },
+  { name: "GeeksforGeeks", icon: Terminal, handle: "abhaykdw3e", url: "https://www.geeksforgeeks.org/user/abhaykdw3e/" },
+  { name: "GitHub", icon: Github, handle: "@Abhaykk615", url: "https://github.com/Abhaykk615" },
 ];
 
 export function CodingProfiles() {
