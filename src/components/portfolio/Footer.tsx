@@ -31,14 +31,8 @@ export function BackToTop() {
 export function Footer() {
   return (
     <footer className="relative border-t border-white/5 py-10">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-6">
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <span className="grid h-6 w-6 place-items-center rounded-full bg-gradient-to-br from-brand-blue to-brand-purple text-[10px] font-black text-white">
-            AK
-          </span>
-          Built with <span className="text-red-400">♥</span> by Abhay Kumar
-        </div>
-        <div className="text-xs uppercase tracking-widest text-muted-foreground">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 px-4 sm:flex-row sm:px-6">
+        <div className="text-xs uppercase tracking-widest text-muted-foreground text-center">
           © {new Date().getFullYear()} · All rights reserved
         </div>
       </div>
