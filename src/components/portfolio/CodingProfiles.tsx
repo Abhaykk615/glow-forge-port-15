@@ -1,8 +1,9 @@
 import { motion } from "motion/react";
-import { Github, Trophy, Terminal } from "lucide-react";
+import { Github, Trophy, Terminal, Code2 } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
 const PROFILES = [
+  { name: "LeetCode", icon: Code2, handle: "abhay_kk", url: "https://leetcode.com/u/abhay_kk/" },
   { name: "CodeChef", icon: Trophy, handle: "breezycape13", url: "https://www.codechef.com/users/breezycape13" },
   { name: "GeeksforGeeks", icon: Terminal, handle: "abhaykdw3e", url: "https://www.geeksforgeeks.org/user/abhaykdw3e/" },
   { name: "GitHub", icon: Github, handle: "@Abhaykk615", url: "https://github.com/Abhaykk615" },
