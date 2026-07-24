@@ -3,11 +3,15 @@
   "private": true,
   "sideEffects": false,
   "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=--experimental-require-module vite dev",
     "build": "cross-env NODE_OPTIONS=--experimental-require-module vite build",
     "build:dev": "cross-env NODE_OPTIONS=--experimental-require-module vite build --mode development",
     "preview": "cross-env NODE_OPTIONS=--experimental-require-module vite preview",
+    "start": "node .output/server/index.mjs",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
